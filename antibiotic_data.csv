@@ -1,0 +1,21 @@
+Disease,Bacteria,Antibiotic,Antibiotic_Class,Typical_Dose_mg,Duration_Days,First_Line_Treatment,Resistant_Bacteria,Allergy_Risk,Severity,Source_URL
+Strep Throat,Streptococcus pyogenes,Amoxicillin,Beta-lactam,500,10,Yes,MRSA;Enterococcus,Low,Moderate,https://academic.oup.com/cid/article/55/10/e86/321183
+Strep Throat,Streptococcus pyogenes,Cephalexin,Beta-lactam,500,10,No,MRSA;Enterococcus;Clostridium difficile,Medium,Moderate,https://academic.oup.com/cid/article/55/10/e86/321183
+Strep Throat,Streptococcus pyogenes,Azithromycin,Macrolide,500,5,No,MRSA;Staphylococcus aureus;Enterococcus,Low,Moderate,https://academic.oup.com/cid/article/55/10/e86/321183
+Uncomplicated UTI,Escherichia coli,Nitrofurantoin,Nitrofuran,100,5,Yes,Pseudomonas aeruginosa;Klebsiella pneumoniae,Low,Mild,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12792211/
+Uncomplicated UTI,Escherichia coli,Ciprofloxacin,Fluoroquinolone,500,7,No,MRSA;Pseudomonas aeruginosa;Klebsiella pneumoniae,Low,Mild,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12792211/
+Uncomplicated UTI,Escherichia coli,Amoxicillin-Clavulanate,Beta-lactam combination,875,5,No,MRSA;Pseudomonas aeruginosa;Enterococcus,Medium,Mild,https://www.idsociety.org/practice-guideline/amr-guidance/
+Community Acquired Pneumonia,Streptococcus pneumoniae,Azithromycin,Macrolide,500,5,No,Klebsiella pneumoniae;Pseudomonas aeruginosa,Low,Moderate,https://academic.oup.com/cid/advance-article/doi/10.1093/cid/ciae403/7728556
+Community Acquired Pneumonia,Streptococcus pneumoniae,Ceftriaxone,Cephalosporin,1000,5,Yes,MRSA;Pseudomonas aeruginosa;Enterobacter,Medium,Severe,https://academic.oup.com/cid/advance-article/doi/10.1093/cid/ciae403/7728556
+Community Acquired Pneumonia,Haemophilus influenzae,Amoxicillin-Clavulanate,Beta-lactam combination,875,7,Yes,MRSA;Pseudomonas aeruginosa;Klebsiella pneumoniae,Medium,Moderate,https://www.cdc.gov/antibiotic-use/hcp/data-research/stewardship-report.html
+Cellulitis,Staphylococcus aureus,Cephalexin,Cephalosporin,500,10,Yes,MRSA;Enterococcus,Medium,Moderate,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8644228/
+Cellulitis,Streptococcus pyogenes,Cephalexin,Cephalosporin,500,10,Yes,MRSA;Pseudomonas aeruginosa,Medium,Moderate,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8644228/
+Cellulitis,Staphylococcus aureus,Doxycycline,Tetracycline,100,10,No,MRSA;Pseudomonas aeruginosa;Klebsiella pneumoniae,Low,Moderate,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10676897/
+Otitis Media,Streptococcus pneumoniae,Amoxicillin,Beta-lactam,875,10,Yes,MRSA;Haemophilus influenzae,Low,Moderate,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8644228/
+Otitis Media,Haemophilus influenzae,Amoxicillin-Clavulanate,Beta-lactam combination,875,10,Yes,MRSA;Streptococcus pneumoniae;Pseudomonas,Medium,Moderate,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8644228/
+Acute Sinusitis,Streptococcus pneumoniae,Amoxicillin-Clavulanate,Beta-lactam combination,875,10,Yes,MRSA;Pseudomonas aeruginosa;Klebsiella,Medium,Moderate,https://cdn.clinicaltrials.gov/large-docs/00/NCT02340000/Prot_SAP_000.pdf
+Acute Sinusitis,Haemophilus influenzae,Cefuroxime,Cephalosporin,500,10,No,MRSA;Pseudomonas aeruginosa;Enterobacter,Medium,Moderate,https://www.cdc.gov/antibiotic-use/hcp/data-research/stewardship-report.html
+Skin and Soft Tissue,Staphylococcus aureus,Amoxicillin-Clavulanate,Beta-lactam combination,875,7,Yes,MRSA;Pseudomonas aeruginosa;Enterococcus,Medium,Moderate,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10676897/
+Bronchitis,Klebsiella pneumoniae,Ciprofloxacin,Fluoroquinolone,500,7,No,MRSA;Pseudomonas aeruginosa;ESBL-producing E. coli,Low,Moderate,https://www.cdc.gov/antibiotic-use/php/usaaw-partner-toolkit/index.html
+Complicated UTI,Klebsiella pneumoniae,Ceftriaxone,Cephalosporin,1000,10,Yes,MRSA;Pseudomonas aeruginosa;ESBL-producing organisms,Medium,Severe,https://www.idsociety.org/practice-guideline/amr-guidance/
+Skin Abscess,Staphylococcus aureus,Doxycycline,Tetracycline,100,10,No,MRSA;Pseudomonas aeruginosa;Enterococcus,Low,Moderate,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8644228/
