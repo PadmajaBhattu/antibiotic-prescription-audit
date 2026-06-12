@@ -10,10 +10,8 @@ st.set_page_config(
 )
 
 # ---------------- HEADER ----------------
-st.title("💊 Antibiotic Prescription Audit system")
+st.title("💊 Antibiotic Prescription Audit System")
 st.caption("Decision Support System for Antimicrobial Stewardship")
-           
-
 st.caption("⚠️ Educational tool only. Not for clinical decision-making.")
 
 st.divider()
@@ -73,6 +71,30 @@ if not clean_rules:
     st.error("❌ No valid treatment rules found in dataset")
     st.stop()
 
+# ---------------- DISEASE INFORMATION (NEW ADDITION) ----------------
+disease_info = {
+    "UTI": {
+        "description": "Urinary tract infection affecting bladder and urinary system.",
+        "area": "Urinary Tract",
+        "cause": "Mostly caused by E. coli bacteria."
+    },
+    "Pneumonia": {
+        "description": "Infection causing inflammation in lungs.",
+        "area": "Lungs",
+        "cause": "Commonly Streptococcus pneumoniae."
+    },
+    "Tuberculosis": {
+        "description": "Chronic bacterial infection affecting lungs.",
+        "area": "Lungs",
+        "cause": "Mycobacterium tuberculosis."
+    },
+    "Skin Infection": {
+        "description": "Bacterial infection of skin and soft tissues.",
+        "area": "Skin",
+        "cause": "Staphylococcus aureus."
+    }
+}
+
 # ---------------- INPUT ----------------
 st.subheader("🧑‍⚕️ Prescription Entry")
 
@@ -80,6 +102,13 @@ col1, col2 = st.columns(2)
 
 with col1:
     disease = st.selectbox("Select Disease", sorted(clean_rules.keys()))
+
+    # ✅ Disease Info Box
+    if disease in disease_info:
+        with st.expander("📖 Disease Information", expanded=False):
+            st.write(f"**Description:** {disease_info[disease]['description']}")
+            st.write(f"**Affected Area:** {disease_info[disease]['area']}")
+            st.write(f"**Common Cause:** {disease_info[disease]['cause']}")
 
     expected_symptoms = clean_rules[disease]["symptoms"]
 
@@ -121,7 +150,6 @@ st.subheader("🧠 Prescription Safety Analysis")
 
 risk_score = 0
 
-# Antibiotic check
 if antibiotic == rule["antibiotic"]:
     st.success("✔ Correct first-line antibiotic")
 else:
@@ -129,7 +157,6 @@ else:
     st.info(f"Recommended: {rule['antibiotic']}")
     risk_score += 3
 
-# Symptom logic
 if not selected_symptoms:
     st.warning("⚠ No symptoms entered")
     risk_score += 1
@@ -137,14 +164,12 @@ if not selected_symptoms:
 elif "Other" in selected_symptoms and len(selected_symptoms) == 1:
     st.warning("⚠ Atypical symptom pattern")
 
-# Resistance logic
 if "resistant" in str(rule["resistance"]).lower():
     st.warning(f"⚠ Resistance risk: {rule['resistance']}")
     risk_score += 2
 else:
     st.info(f"Resistance info: {rule['resistance']}")
 
-# Severity proxy
 if len(selected_symptoms) >= 4:
     st.warning("⚠ Possible high severity infection")
     risk_score += 1
