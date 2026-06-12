@@ -71,27 +71,47 @@ if not clean_rules:
     st.error("❌ No valid treatment rules found in dataset")
     st.stop()
 
-# ---------------- DISEASE INFORMATION (NEW ADDITION) ----------------
+# ---------------- DISEASE KNOWLEDGE BASE ----------------
 disease_info = {
-    "UTI": {
-        "description": "Urinary tract infection affecting bladder and urinary system.",
+    "Acute Sinusitis": {
+        "description": "Inflammation of sinus cavities causing congestion and facial pain.",
+        "area": "Nasal Sinuses",
+        "cause": "Streptococcus pneumoniae, Haemophilus influenzae"
+    },
+    "Cellulitis": {
+        "description": "Bacterial skin infection causing redness, swelling and pain.",
+        "area": "Skin & Soft Tissue",
+        "cause": "Streptococcus pyogenes, Staphylococcus aureus"
+    },
+    "Community Acquired Pneumonia": {
+        "description": "Lung infection acquired outside hospital settings.",
+        "area": "Lungs",
+        "cause": "Streptococcus pneumoniae"
+    },
+    "Complicated UTI": {
+        "description": "Urinary infection with structural or functional complications.",
         "area": "Urinary Tract",
-        "cause": "Mostly caused by E. coli bacteria."
+        "cause": "E. coli, Klebsiella pneumoniae"
     },
-    "Pneumonia": {
-        "description": "Infection causing inflammation in lungs.",
-        "area": "Lungs",
-        "cause": "Commonly Streptococcus pneumoniae."
+    "Otitis Media": {
+        "description": "Middle ear infection causing ear pain and fluid buildup.",
+        "area": "Ear",
+        "cause": "Streptococcus pneumoniae, Haemophilus influenzae"
     },
-    "Tuberculosis": {
-        "description": "Chronic bacterial infection affecting lungs.",
-        "area": "Lungs",
-        "cause": "Mycobacterium tuberculosis."
-    },
-    "Skin Infection": {
-        "description": "Bacterial infection of skin and soft tissues.",
+    "Skin and Soft Tissue": {
+        "description": "Infections affecting skin layers and underlying tissues.",
         "area": "Skin",
-        "cause": "Staphylococcus aureus."
+        "cause": "Staphylococcus aureus, Streptococcus pyogenes"
+    },
+    "Strep Throat": {
+        "description": "Throat infection causing pain and fever.",
+        "area": "Throat",
+        "cause": "Streptococcus pyogenes"
+    },
+    "Uncomplicated UTI": {
+        "description": "Simple bladder infection without complications.",
+        "area": "Urinary Tract",
+        "cause": "Escherichia coli"
     }
 }
 
@@ -103,12 +123,16 @@ col1, col2 = st.columns(2)
 with col1:
     disease = st.selectbox("Select Disease", sorted(clean_rules.keys()))
 
-    # ✅ Disease Info Box
-    if disease in disease_info:
+    # 🔥 Disease Info Box
+    info = disease_info.get(disease, None)
+
+    if info:
         with st.expander("📖 Disease Information", expanded=False):
-            st.write(f"**Description:** {disease_info[disease]['description']}")
-            st.write(f"**Affected Area:** {disease_info[disease]['area']}")
-            st.write(f"**Common Cause:** {disease_info[disease]['cause']}")
+            st.write(f"**Description:** {info['description']}")
+            st.write(f"**Affected Area:** {info['area']}")
+            st.write(f"**Common Cause:** {info['cause']}")
+    else:
+        st.info("No additional disease info available.")
 
     expected_symptoms = clean_rules[disease]["symptoms"]
 
